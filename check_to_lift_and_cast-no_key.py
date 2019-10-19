@@ -61,7 +61,7 @@ def main():
 			print('\nlift&cast checking block {0}'.format(current_bn))
 			
 			# add in the another count here and give it a unique name. Change the storage address to the new storage address you found above
-			count_205_2 = int(web3.toHex(bytes(web3.eth.getStorageAt(CHIEF, web3.toInt(hexstr=STORAGE_ADDRESS_205_2))))[2:66].lstrip('0'), 51016)
+			count_205_2 = int(web3.toHex(bytes(web3.eth.getStorageAt(CHIEF, web3.toInt(hexstr=STORAGE_ADDRESS_205_2))))[2:66].lstrip('0'), 16)
 			count_185_2 = int(web3.toHex(bytes(web3.eth.getStorageAt(CHIEF, web3.toInt(hexstr=STORAGE_ADDRESS_185_2))))[2:66].lstrip('0'), 16)
 			count_165 = int(web3.toHex(bytes(web3.eth.getStorageAt(CHIEF, web3.toInt(hexstr=STORAGE_ADDRESS_165))))[2:66].lstrip('0'), 16)
 			count_145 = int(web3.toHex(bytes(web3.eth.getStorageAt(CHIEF, web3.toInt(hexstr=STORAGE_ADDRESS_145))))[2:66].lstrip('0'), 16)

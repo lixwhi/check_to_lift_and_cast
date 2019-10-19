@@ -32,7 +32,6 @@ SLATE = ''
 #		in the example vote above, you can see the storage address beginning with 0x9011 went down (8.5)
 #		and the storage address 0xf77c (9.5) went up
 # 4. make a new storage address variable and put it with the rest of these.
-STORAGE_ADDRESS_175 = '0x7194895226521b264c1718437ceee76a2bdd3063d5d78c0d9ba690edeb922c53'
 STORAGE_ADDRESS_185 = '0x1f42fd789e1fb5d34f365215219111a9335ed0911da620de3fd9992f9e5900bf'
 STORAGE_ADDRESS_205 = '0xf55ab75f9089ec31ac3e2fd408a16fe9ddd50e8d8bfcb7aa7e97eaa8377e0792'
 STORAGE_ADDRESS_225 = '0x079ea8688746ca3c039cc6de83b7c3e9df4c124fea469195aabdd2fea424b500'

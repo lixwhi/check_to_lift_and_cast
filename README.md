@@ -9,14 +9,3 @@ line 6 - change to your web3 provider
 
 line 12/13 - put in your address/key
 
-line 23 - put in the new slate contract address
-
-line 47 - add in a new variable containing the storage address of the new slate
-
-line 72 - add in a new variable for the vote count of the new slate
-
-line 82 - print out the new vote count
-
-line 86 - change the if statement to check for the new count vs the slate with the hat (the one with the most votes)
-
-line 89 - uncomment do_it() when everything is set up correctly

@@ -2,7 +2,7 @@ from web3 import Web3
 from web3.gas_strategies.time_based import fast_gas_price_strategy
 import json
 import time
-web3 = Web3(Web3.HTTPProvider('your http web provider here'))
+web3 = Web3(Web3.HTTPProvider('your web3 provider here'))
 web3.eth.setGasPriceStrategy(fast_gas_price_strategy)
 
 ETH_SCALE = 1000000000000000000
@@ -11,7 +11,7 @@ ADDRESS = "your address here"
 KEY = "your key here"
 
 CHIEF = '0x9eF05f7F6deB616fd37aC3c959a2dDD25A54E4F5'
-SLATE = '0xF267EFDDA842539a2cAff990259395188a86b813'
+SLATE = '0xDD4Aa99077C5e976AFc22060EEafBBd1ba34eae9'
 ZEROS = '000000000000000000000000'
 APPROVAL_8 = '0000000000000000000000000000000000000000000000000000000000000008'
 
@@ -32,6 +32,7 @@ SLATE_MCD = '0xF44113760c4f70aFeEb412C63bC713B13E6e202E'
 SLATE_040 = '0xF3aB5E963E7c09E205927b9ba498Bb09afe3BC22'
 SLATE_OSM = '0x902f009d4dE4a7828284B04b364dD43F00E51A02'
 SLATE_DSR_4 = '0xF267EFDDA842539a2cAff990259395188a86b813'
+SLATE_DELAY = '0xDD4Aa99077C5e976AFc22060EEafBBd1ba34eae9'
 
 STORAGE_ADDRESS_185 = web3.toHex(web3.sha3(hexstr='0x' + ZEROS + SLATE_185[2:] + APPROVAL_8))
 STORAGE_ADDRESS_205 = web3.toHex(web3.sha3(hexstr='0x' + ZEROS + SLATE_205[2:] + APPROVAL_8))
@@ -50,7 +51,7 @@ STORAGE_ADDRESS_MCD = web3.toHex(web3.sha3(hexstr='0x' + ZEROS + SLATE_MCD[2:] +
 STORAGE_ADDRESS_040 = web3.toHex(web3.sha3(hexstr='0x' + ZEROS + SLATE_040[2:] + APPROVAL_8))
 STORAGE_ADDRESS_OSM = web3.toHex(web3.sha3(hexstr='0x' + ZEROS + SLATE_OSM[2:] + APPROVAL_8))
 STORAGE_ADDRESS_DSR_4 = web3.toHex(web3.sha3(hexstr='0x' + ZEROS + SLATE_DSR_4[2:] + APPROVAL_8))
-
+STORAGE_ADDRESS_DELAY = web3.toHex(web3.sha3(hexstr='0x' + ZEROS + SLATE_DELAY[2:] + APPROVAL_8))
 
 CHIEF_ABI = json.loads('[{"constant":true,"inputs":[],"name":"IOU","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"who","type":"address"}],"name":"getUserRoles","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"owner_","type":"address"}],"name":"setOwner","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"GOV","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"code","type":"address"},{"name":"sig","type":"bytes4"}],"name":"getCapabilityRoles","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"code","type":"address"},{"name":"sig","type":"bytes4"}],"name":"isCapabilityPublic","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"MAX_YAYS","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"whom","type":"address"}],"name":"lift","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"yays","type":"address[]"}],"name":"etch","outputs":[{"name":"slate","type":"bytes32"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"approvals","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"who","type":"address"},{"name":"role","type":"uint8"},{"name":"enabled","type":"bool"}],"name":"setUserRole","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"authority_","type":"address"}],"name":"setAuthority","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"role","type":"uint8"},{"name":"code","type":"address"},{"name":"sig","type":"bytes4"},{"name":"enabled","type":"bool"}],"name":"setRoleCapability","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"who","type":"address"},{"name":"role","type":"uint8"}],"name":"hasUserRole","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"slate","type":"bytes32"}],"name":"vote","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"caller","type":"address"},{"name":"code","type":"address"},{"name":"sig","type":"bytes4"}],"name":"canCall","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"authority","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"bytes32"},{"name":"","type":"uint256"}],"name":"slates","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"code","type":"address"},{"name":"sig","type":"bytes4"},{"name":"enabled","type":"bool"}],"name":"setPublicCapability","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"who","type":"address"},{"name":"enabled","type":"bool"}],"name":"setRootUser","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"votes","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"wad","type":"uint256"}],"name":"free","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"wad","type":"uint256"}],"name":"lock","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"yays","type":"address[]"}],"name":"vote","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"who","type":"address"}],"name":"isUserRoot","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"deposits","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"hat","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"GOV","type":"address"},{"name":"IOU","type":"address"},{"name":"MAX_YAYS","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"slate","type":"bytes32"}],"name":"Etch","type":"event"},{"anonymous":true,"inputs":[{"indexed":true,"name":"sig","type":"bytes4"},{"indexed":true,"name":"guy","type":"address"},{"indexed":true,"name":"foo","type":"bytes32"},{"indexed":true,"name":"bar","type":"bytes32"},{"indexed":false,"name":"wad","type":"uint256"},{"indexed":false,"name":"fax","type":"bytes"}],"name":"LogNote","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"authority","type":"address"}],"name":"LogSetAuthority","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"owner","type":"address"}],"name":"LogSetOwner","type":"event"}]')
 SLATE_ABI = json.loads('[{"constant":true,"inputs":[],"name":"data","outputs":[{"name":"","type":"bytes"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"cast","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"done","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"mana","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"whom","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"whom_","type":"address"},{"name":"mana_","type":"uint256"},{"name":"data_","type":"bytes"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":true,"inputs":[{"indexed":true,"name":"sig","type":"bytes4"},{"indexed":true,"name":"guy","type":"address"},{"indexed":true,"name":"foo","type":"bytes32"},{"indexed":true,"name":"bar","type":"bytes32"},{"indexed":false,"name":"wad","type":"uint256"},{"indexed":false,"name":"fax","type":"bytes"}],"name":"LogNote","type":"event"}]')
@@ -85,6 +86,7 @@ def main():
 			count_040 = int(web3.toHex(bytes(web3.eth.getStorageAt(CHIEF, web3.toInt(hexstr=STORAGE_ADDRESS_040))))[2:66].lstrip('0'), 16)
 			count_osm = int(web3.toHex(bytes(web3.eth.getStorageAt(CHIEF, web3.toInt(hexstr=STORAGE_ADDRESS_OSM))))[2:66].lstrip('0'), 16)
 			count_dsr_4 = int(web3.toHex(bytes(web3.eth.getStorageAt(CHIEF, web3.toInt(hexstr=STORAGE_ADDRESS_DSR_4))))[2:66].lstrip('0'), 16)
+			count_delay = int(web3.toHex(bytes(web3.eth.getStorageAt(CHIEF, web3.toInt(hexstr=STORAGE_ADDRESS_DELAY))))[2:66].lstrip('0'), 16)
 
 			# print('18.5 count: {0}'.format(count_185 / ETH_SCALE))
 			# print('20.5 count: {0}'.format(count_205 / ETH_SCALE))
@@ -98,11 +100,12 @@ def main():
 			# print('08.5 count: {0}'.format(count_085 / ETH_SCALE))
 			# print('05.5 count: {0}'.format(count_055 / ETH_SCALE))
 			# print('05.0 count: {0}'.format(count_050 / ETH_SCALE))
-			print('MCD  count: {0}'.format(count_mcd / ETH_SCALE))
+			print('MCD! count: {0}'.format(count_mcd / ETH_SCALE))
 			print('04.0 count: {0}'.format(count_040 / ETH_SCALE))
 			print('OSM  count: {0}'.format(count_osm / ETH_SCALE))
 			print('DSR4 count: {0}'.format(count_dsr_4 / ETH_SCALE))
-			if ((count_dsr_4 > count_osm) and (count_dsr_4 > count_mcd)):
+			print('DELAY count: {0}'.format(count_delay / ETH_SCALE))
+			if ((count_delay > count_dsr_4) and (count_delay > count_mcd)):
 				do_it()
 				exit()
 
